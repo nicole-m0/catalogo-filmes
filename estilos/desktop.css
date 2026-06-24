@@ -1,0 +1,34 @@
+header#ficha{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 500px;
+    min-height: 100vh;
+}
+
+nav a{
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+nav a:hover{
+    background-color: var(--primary);
+    color: var(--nav);
+    transition: 0.5s;
+}
+
+#ulFicha{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
