@@ -6,6 +6,7 @@
 }
 
 body{
+    background-color: var(--bg);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -19,4 +20,12 @@ body{
 
 nav{
     background-color: var(--nav);
+}
+
+#ulFicha {
+    display: none;
+}
+
+nav h1{
+    background-color: var(--bg);
 }

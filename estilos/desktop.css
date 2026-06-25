@@ -32,3 +32,7 @@ nav a:hover{
     margin: 0;
     padding: 0;
 }
+
+nav h1{
+    background-color: var(--nav);
+}
