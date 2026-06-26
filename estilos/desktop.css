@@ -7,6 +7,7 @@ header#ficha{
     left: 0;
     width: 500px;
     min-height: 100vh;
+    gap: 50px;
 }
 
 nav a{
@@ -31,8 +32,18 @@ nav a:hover{
     list-style: none;
     margin: 0;
     padding: 0;
+    margin-top: 250px;
 }
 
 nav h1{
     background-color: var(--nav);
+    margin: 25px;
+}
+
+#pesquisa-container{
+    width: 500px;
+}
+
+#pesquisa {
+    width: 100%;
 }

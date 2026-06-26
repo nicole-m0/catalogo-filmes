@@ -1,8 +1,8 @@
 :root{
-    --bg: #fdfdfd;
-    --nav: #e7fe25;
-    --primary: #013f32;
-    --texto: #161616 ;
+    --bg: #1b1b1b;
+    --nav: #014751;
+    --primary: #37f4b5;
+    --texto: #fdfdfd;
 }
 
 body{
@@ -10,16 +10,10 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/*body.dark{
-    --bg: #161616;
-    --nav: #013f32;
-    --primary: #e7fe25;
-    --texto: #fdfdfd;
-}
-*/
-
 nav{
     background-color: var(--nav);
+    flex-shrink: 0;
+    width: 200px;
 }
 
 #ulFicha {
@@ -28,4 +22,17 @@ nav{
 
 nav h1{
     background-color: var(--bg);
+    color: var(--texto);
+}
+
+#pesquisa{
+    width: 100%;
+    min-width: 0;
+}
+
+#pesquisa-container input{
+    outline: none;
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    height: 35px;
 }
