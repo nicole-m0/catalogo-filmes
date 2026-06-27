@@ -1,13 +1,27 @@
 header#ficha{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    position: fixed;
+     position: fixed;
     top: 0;
     left: 0;
-    width: 500px;
+    width: 300px;
+    height: 100vh;
+    background-color: var(--nav);
+    display: flex
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    grid-column: 2;
+}
+
+#allSection{
+    display: grid;
+    grid-template-columns: 300px 1fr;
     min-height: 100vh;
-    gap: 50px;
 }
 
 nav a{
@@ -32,7 +46,23 @@ nav a:hover{
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-top: 250px;
+    margin-top: 25px;
+}
+
+.hero{
+    position: relative;
+}
+
+.banner{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 nav h1{
@@ -46,4 +76,7 @@ nav h1{
 
 #pesquisa {
     width: 100%;
+    height: 45px;
+    border-radius: 25px;
+    padding: 0 20px;
 }
