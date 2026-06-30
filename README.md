@@ -20,12 +20,12 @@ O **Catálogo Films** foi criado com o objetivo de praticar conceitos fundamenta
 ## 🛠️ Tecnologias utilizadas
 
 <div align="center">
-  <img src="https://img.shields.io/badge/HTML5-F6C7B6?style=for-the-badge&logo=html5&logoColor=E34F26">
-  <img src="https://img.shields.io/badge/CSS3-C7DCF8?style=for-the-badge&logo=css3&logoColor=1572B6">
-  <img src="https://img.shields.io/badge/JavaScript-F8E9A1?style=for-the-badge&logo=javascript&logoColor=323330">
-  <img src="https://img.shields.io/badge/Fetch_API-D8CFF8?style=for-the-badge&logo=javascript&logoColor=5A3E85">
-  <img src="https://img.shields.io/badge/LocalStorage-D9EAD3?style=for-the-badge&logo=html5&logoColor=5A5A5A">
-  <img src="https://img.shields.io/badge/TMDB_API-C5F0E3?style=for-the-badge&logo=themoviedatabase&logoColor=01D277">
+  <img src="https://img.shields.io/badge/HTML5-F2A98D?style=for-the-badge&logo=html5&logoColor=E34F26">
+  <img src="https://img.shields.io/badge/CSS3-AFCDF7?style=for-the-badge&logo=css3&logoColor=1572B6">
+  <img src="https://img.shields.io/badge/JavaScript-F6DD6A?style=for-the-badge&logo=javascript&logoColor=323330">
+  <img src="https://img.shields.io/badge/Fetch_API-C6B4F5?style=for-the-badge&logo=javascript&logoColor=5A3E85">
+  <img src="https://img.shields.io/badge/LocalStorage-BFDEB4?style=for-the-badge&logo=html5&logoColor=4F4F4F">
+  <img src="https://img.shields.io/badge/TMDB_API-9FE8D3?style=for-the-badge&logo=themoviedatabase&logoColor=01D277">
 </div>
 
 ## 📷 Preview
