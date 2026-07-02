@@ -1,4 +1,4 @@
-const apiKey = "";
+const apiKey = "cfa8285f5f5e509045dbafd59c4932e5";
 
 async function buscarFilmes() {
     const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR&page=1`;
@@ -6,31 +6,74 @@ async function buscarFilmes() {
     const resposta = await fetch(url);
     const dados = await resposta.json();
 
-    cardsPopulares(dados.results)
+    cardsPopulares();
+    cardsAvaliados();
+    cardsMelhores();
     console.log(dados);
 }
 
+    function criarCards(filmes, lista) {
+
+    lista.innerHTML = "";
+
+    filmes.forEach(filme => {
+
+        lista.innerHTML += `
+            <div class="cardFilme">
+                <img src="https://image.tmdb.org/t/p/w500${filme.poster_path}">
+                <h3>${filme.title}</h3>
+                <p>${filme.release_date.substring(0,4)}</p>
+                <p>${filme.vote_average.toFixed(1)}</p>
+            </div>
+        `;
+    });
+
+}
+
  //card populares: foto(poster_path),título: title, ano: release_date, estrelas:vote_average
-    function cardsPopulares(filmes) {
-        filmes.forEach(filme => {
-            const capa = `https://image.tmdb.org/t/p/w500${filme.poster_path}`;
-            const titulo = filme.title;
-            const ano = filme.release_date.slice(0, 4);
-            const estrelas = filme.vote_average.toFixed(1);
+    async function cardsPopulares(){
+    const resposta = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR&page=1`);
+    const dados = await resposta.json();
+    criarCards(dados.results, document.getElementById("listaPopulares"));
+}
 
-            const cardFilme = document.createElement('div');
-            cardFilme.classList.add('cardFilme');
+    async function cardsAvaliados() {
+         const resposta = await fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&language=pt-BR`);
+        const dados = await resposta.json();
+        criarCards(dados.results, document.getElementById("listaAlta"));
+    }
 
-            cardFilme.innerHTML = `
-                <img src="${capa}" alt="capa do filme">
-                <span>${titulo}</span>
-                <p>${ano}</p>
-                <p>⭐${estrelas}</p>
-            `;
-
-            const listapopulares = document.getElementById('listaPopulares');
-            listapopulares.appendChild(cardFilme);
-        });   
+    async function cardsMelhores() {
+         const resposta = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=pt-BR&page=1`);
+        const dados = await resposta.json();
+        criarCards(dados.results, document.getElementById("listaAvaliados"));
     }
 
 buscarFilmes();
+
+
+// scroll
+const secoes = document.querySelectorAll("main section");
+const links = document.querySelectorAll("#ulFicha a");
+
+window.addEventListener("scroll", () => {
+
+    let atual = "";
+
+    secoes.forEach(secao => {
+        const topo = secao.offsetTop - 120;
+
+        if(scrollY >= topo){
+            atual = secao.id;
+        }
+    });
+
+    links.forEach(link => {
+        link.classList.remove("ativo");
+
+        if(link.getAttribute("href") === "#" + atual){
+            link.classList.add("ativo");
+        }
+    });
+
+});

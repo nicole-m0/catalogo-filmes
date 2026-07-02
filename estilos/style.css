@@ -4,6 +4,7 @@
     --primary: #37f4b5;
     --texto: #fdfdfd;
     --textoSecundario: #bababa;
+    --bg2: #646464;
 }
 
 body{
@@ -55,7 +56,7 @@ nav h1{
     height: 35px;
 }
 
-#listaPopulares{
+.cardMain{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -75,7 +76,7 @@ nav h1{
     height: auto;
 }
 
-.cardFilme span, p{
+.cardFilme h3, p{
     color: var(--texto);
     font-weight: bolder;
 }
@@ -91,7 +92,7 @@ nav h1{
     font-size: 0.8em;
 }
 
-h1#populares{
+#paaCards h1{
     color: var(--texto);
     margin-left: 20px;
     font-weight: bolder;
