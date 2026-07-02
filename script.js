@@ -1,4 +1,4 @@
-const apiKey = "";
+const apiKey = "cfa8285f5f5e509045dbafd59c4932e5";
 
 async function buscarFilmes() {
     const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR&page=1`;
@@ -75,5 +75,42 @@ window.addEventListener("scroll", () => {
             link.classList.add("ativo");
         }
     });
+
+});
+
+async function pesquisarFilmes(nome){
+
+    const resposta = await fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=pt-BR&query=${encodeURIComponent(nome)}`
+    );
+
+    const dados = await resposta.json();
+
+    document.getElementById("resultadoPesquisa").style.display = "block";
+    document.getElementById("tituloPesquisa").innerHTML =
+        `Resultados para "${nome}"`;
+
+    criarCards(
+        dados.results,
+        document.getElementById("listaPesquisa")
+    );
+}
+
+const pesquisa = document.getElementById("pesquisa");
+let timeout;
+
+pesquisa.addEventListener("input", () => {
+
+    clearTimeout(timeout);
+    const nome = pesquisa.value.trim();
+
+    if(nome === ""){
+        document.getElementById("resultadoPesquisa").style.display = "none";
+        return;
+    }
+
+    timeout = setTimeout(() => {
+        pesquisarFilmes(nome);
+    }, 500);
 
 });
