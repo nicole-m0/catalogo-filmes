@@ -22,6 +22,7 @@ main{
     display: grid;
     grid-template-columns: 300px 1fr;
     min-height: 100vh;
+    flex-shrink: 1;
 }
 
 nav a{
@@ -65,9 +66,9 @@ nav h1{
 }
 
 #pesquisa-container{
-    width: 500px;
-    margin-top: 20px;
-    margin-left: 20px;
+    width: calc(100% - 40px);
+    max-width: 500px;
+    margin: 20px
 }
 
 #pesquisa {
@@ -77,9 +78,9 @@ nav h1{
     padding: 0 20px;
 }
 
-.cardMain{
+.cardMain, #resultadoPesquisa{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 30px;
     padding: 20px;
 }
