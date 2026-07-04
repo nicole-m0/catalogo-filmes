@@ -83,3 +83,7 @@ nav h1{
     gap: 30px;
     padding: 20px;
 }
+
+.cardFilm img{
+    max-width: 200px;
+}
