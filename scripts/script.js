@@ -1,4 +1,4 @@
-const apiKey = "";
+const apiKey = "cfa8285f5f5e509045dbafd59c4932e5";
 
 async function buscarFilmes() {
     const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR&page=1`;
@@ -12,22 +12,77 @@ async function buscarFilmes() {
     console.log(dados);
 }
 
-    function criarCards(filmes, lista) {
+    function criarCards(filmes, lista){
 
     lista.innerHTML = "";
 
     filmes.forEach(filme => {
 
         lista.innerHTML += `
-            <div class="cardFilme">
+            <div class="cardFilme" data-id="${filme.id}">
                 <img src="https://image.tmdb.org/t/p/w500${filme.poster_path}">
                 <h3>${filme.title}</h3>
                 <p>${filme.release_date.substring(0,4)}</p>
-                <p>${filme.vote_average.toFixed(1)}</p>
+                <p>⭐ ${filme.vote_average.toFixed(1)}</p>
             </div>
         `;
     });
 
+    const cards = lista.querySelectorAll(".cardFilme");
+
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+            abrirModal(card.dataset.id);
+
+        });
+    });
+
+}
+// backdrop_path(background img), original_title, overview (resumo), poster_path, release_date, vote_average(estrelas), btn watch now, btn add to list
+    async function abrirModal(id){
+
+    const resposta = await fetch(
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=pt-BR`
+    );
+
+    const filme = await resposta.json();
+
+    const modal = document.getElementById("modal");
+    const conteudo = modal.querySelector(".conteudoModal");
+
+    conteudo.innerHTML = `
+        <img src="https://image.tmdb.org/t/p/original${filme.backdrop_path}" class="banner">
+
+        <div class="infoModal">
+
+            <img src="https://image.tmdb.org/t/p/w500${filme.poster_path}" class="poster">
+
+            <div class="texto">
+
+                <h1>${filme.title}</h1>
+
+                <p>${filme.overview}</p>
+
+                <p><strong>Lançamento:</strong> ${filme.release_date}</p>
+
+                <p>⭐ ${filme.vote_average.toFixed(1)}</p>
+
+                <button id="btnWatch">
+                    <i class="fa-solid fa-play"></i>
+                    Watch Now
+                </button>
+
+                <button id="btnAdd">
+                    <i class="fa-solid fa-plus"></i>
+                    Add to list
+                </button>
+
+            </div>
+
+        </div>
+    `;
+
+    modal.style.display = "flex";
 }
 
  //card populares: foto(poster_path),título: title, ano: release_date, estrelas:vote_average
@@ -50,7 +105,11 @@ async function buscarFilmes() {
     }
 
 buscarFilmes();
-
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+});
 
 // scroll
 const secoes = document.querySelectorAll("main section");

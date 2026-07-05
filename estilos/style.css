@@ -111,3 +111,48 @@ nav h1{
     text-align: center;
     color: var(--texto);
 }
+
+.modal{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.8);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+}
+
+.conteudoModal{
+    width: 900px;
+    max-width: 90%;
+    background: #1d1d1d;
+    color: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.banner{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.infoModal{
+    display:flex;
+    gap:30px;
+    padding:25px;
+}
+
+.poster{
+    width:200px;
+    border-radius:10px;
+}
+
+.texto{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
