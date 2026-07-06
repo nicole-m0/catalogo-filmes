@@ -1,4 +1,4 @@
-const apiKey = "";
+const apiKey = "cfa8285f5f5e509045dbafd59c4932e5";
 
 async function buscarFilmes() {
     const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR&page=1`;
@@ -105,6 +105,8 @@ async function buscarFilmes() {
     }
 
 buscarFilmes();
+
+const modal = document.getElementById('modal');
 modal.addEventListener("click", (e) => {
     if (e.target === modal) {
         modal.style.display = "none";
