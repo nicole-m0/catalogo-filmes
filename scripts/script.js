@@ -1,4 +1,4 @@
-const apiKey = "";
+const apiKey = "cfa8285f5f5e509045dbafd59c4932e5";
 
 async function buscarFilmes() {
     const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR&page=1`;
@@ -73,7 +73,7 @@ async function buscarFilmes() {
                 </button>
 
                 <button id="btnAdd">
-                    <i class="fa-solid fa-plus"></i>
+                    <i class="fa-regular fa-heart"></i>
                     Add to list
                 </button>
 

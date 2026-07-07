@@ -90,12 +90,7 @@ nav h1{
 }
 
 /* ===== MODAL DESKTOP ===== */ 
-.modal{ 
-    position: fixed;     
-    inset: 0;     
-    background: rgba(0,0,0,.85);     
-    display: none;     
-    justify-content: center;     
+.modal{   
     align-items: center;     
     z-index: 9999;     
     padding: 20px; 
@@ -104,24 +99,16 @@ nav h1{
  .conteudoModal{
     width: 900px;     
     max-width: 100%;     
-    max-height: 90vh;     
-    overflow-y: auto;     
-    background: #1d1d1d;     
-    color: white;     
-    border-radius: 20px;     
-    overflow: hidden; 
+    max-height: 90vh;                    
 }
 
- .banner{     
-    width: 100%;     
-    height: 280px;     
-    object-fit: cover; 
+ .banner{          
+    height: 220px;     
 }
 
  .infoModal{     
-    display: flex;     
-    gap: 30px;     
-    padding: 25px;     
+    display: flex;          
+    padding: 15px;     
     align-items: flex-start; 
 }
 
@@ -133,8 +120,7 @@ nav h1{
 
  .texto{     
     display: flex;     
-    flex-direction: column;     
-    gap: 15px; 
+    flex-direction: column;      
 }
 
  .texto h1{     
@@ -142,18 +128,9 @@ nav h1{
 }
  .texto p{     
     line-height: 1.6; 
+    margin-top: 10px;
 }
- #btnWatch, #btnAdd{     
-    padding: 12px 18px;     
-    border: none;     
-    border-radius: 10px;     
-    cursor: pointer;     
-    font-size: 1rem; 
+
+#btnWatch, #btnAdd{
+    margin-top: 5px;
 }
- #btnWatch{     
-    background: #ff3b3b;     
-    color: white; 
-}
- #btnAdd{     
-    background: #333;     
-    color: white; }
