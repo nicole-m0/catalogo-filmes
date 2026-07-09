@@ -1,4 +1,4 @@
-const apiKey = "";
+const apiKey = "cfa8285f5f5e509045dbafd59c4932e5";
 
 async function buscarFilmes() {
     const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR&page=1`;
@@ -82,6 +82,22 @@ async function buscarFilmes() {
         </div>
     `;
 
+    const btnAdd = document.getElementById('btnAdd');
+    atualizarBotao(btnAdd, filme.id);
+
+    btnAdd.addEventListener("click", () => {
+
+        if (estaNaLista(filme.id)) {
+            removerLista(filme.id);
+
+        } else {
+            adicionarLista(filme);
+        }
+
+        atualizarBotao(btnAdd, filme.id);
+        mostrarFavoritos();
+});
+
     modal.style.display = "flex";
 }
 
@@ -104,7 +120,50 @@ async function buscarFilmes() {
         criarCards(dados.results, document.getElementById("listaAvaliados"));
     }
 
+    function mostrarFavoritos() {
+    const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+    criarCards(
+        favoritos,
+        document.getElementById("listaFavoritos")
+    );
+}
+
+function estaNaLista(id) {
+    const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+    return favoritos.some(f => f.id === id);
+}
+
+function adicionarLista(filme) {
+    const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+    favoritos.push(filme);
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
+}
+
+function atualizarBotao(btn, id) {
+    if (estaNaLista(id)) {
+        btn.innerHTML = `
+            <i class="fa-solid fa-trash"></i>
+            Remove To List
+        `;
+    } else {
+        btn.innerHTML = `
+            <i class="fa-regular fa-heart"></i> 
+            Add To List
+        `;
+    }
+}
+
+function removerLista(id) {
+    let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+    favoritos = favoritos.filter(f => f.id !== id);
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
+}
+
 buscarFilmes();
+window.addEventListener("DOMContentLoaded", () => {
+    buscarFilmes();
+    mostrarFavoritos();
+});
 
 const modal = document.getElementById('modal');
 modal.addEventListener("click", (e) => {

@@ -18,10 +18,10 @@
             <nav>
                 <h1>Films🎬</h1>
                 <ul id="ulFicha">
+                    <li><a href="#favoritos">Favoritos</a></li>
                     <li><a href="#populares">Filmes Populares</a></li>
                     <li><a href="#alta">Filmes em Alta</a></li>
                     <li><a href="#avaliados">Melhores Avaliados</a></li>
-                    <li><a href="#favoritos">Favoritos</a></li>
                     <li><a href="#premium">Seja Premium</a></li>
                 </ul>
             </nav>
@@ -39,6 +39,10 @@
                 </div>
 
             <div id="paaCards">
+                <section id="favoritos">
+                    <h1>Sua Lista</h1>
+                    <div id="listaFavoritos" class="cardMain"></div>
+                </section>
                 <section id="populares">
                     <h1>Filmes Populares</h1>
                     <div id="listaPopulares" class="cardMain"></div>
@@ -56,6 +60,97 @@
             <div id="modal" class="modal">
                 <div class="conteudoModal"></div>
             </div>
+
+            <section id="premium">
+
+    <h2>Become Premium</h2>
+
+    <p>
+        Unlock exclusive movies, watch without ads and enjoy the best
+        streaming experience anywhere.
+    </p>
+
+    <div class="planos">
+
+        <div class="plano">
+            <h3>Basic</h3>
+            <h1>$7.99</h1>
+            <p>/month</p>
+
+            <ul>
+                <li>✔ HD Streaming</li>
+                <li>✔ Watch on 1 device</li>
+                <li>✔ Unlimited Movies</li>
+            </ul>
+        </div>
+
+        <div class="plano destaque">
+            <span>Most Popular</span>
+
+            <h3>Standard</h3>
+
+            <h1>$12.99</h1>
+
+            <p>/month</p>
+
+            <ul>
+                <li>✔ Full HD</li>
+                <li>✔ Watch on 2 devices</li>
+                <li>✔ Unlimited Movies</li>
+                <li>✔ Offline Download</li>
+            </ul>
+        </div>
+
+        <div class="plano">
+            <h3>Premium</h3>
+
+            <h1>$18.99</h1>
+
+            <p>/month</p>
+
+            <ul>
+                <li>✔ 4K Ultra HD</li>
+                <li>✔ Watch on 4 devices</li>
+                <li>✔ Unlimited Movies</li>
+                <li>✔ Offline Download</li>
+                <li>✔ Dolby Atmos</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <form id="formPremium">
+
+        <h3>Start your Premium Plan</h3>
+
+        <input
+            type="text"
+            placeholder="Full Name"
+            required
+        >
+
+        <input
+            type="email"
+            placeholder="Email Address"
+            required
+        >
+
+        <select required>
+
+            <option value=""> Choose your plan</option>
+            <option>Basic</option>
+            <option>Standard</option>
+            <option>Premium</option>
+
+        </select>
+
+        <button type="submit">
+            Become Premium
+        </button>
+
+    </form>
+
+</section>
         </main>
     </section>
 

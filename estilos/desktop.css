@@ -88,8 +88,7 @@ nav h1{
 .cardFilm img{
     max-width: 200px;
 }
-
-/* ===== MODAL DESKTOP ===== */ 
+ 
 .modal{   
     align-items: center;     
     z-index: 9999;     
@@ -113,7 +112,7 @@ nav h1{
 }
 
  .poster{     
-    width: 220px;     
+    width: 200px;     
     border-radius: 12px;     
     flex-shrink: 0; 
 }
@@ -133,4 +132,24 @@ nav h1{
 
 #btnWatch, #btnAdd{
     margin-top: 5px;
+}
+
+section#premium{
+    padding: 100px 80px;
+}
+
+.planos{
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.plano{
+    flex: 1;
+    max-width: 330px;
+}
+
+#formPremium{
+    width: 500px;
+    margin: 70px auto 0;
 }
